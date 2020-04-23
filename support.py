@@ -7,6 +7,8 @@ def Support(item,list):
         if(element==item):
             count=count+1
     return count/len(list)
+minSupport=input("Enter minimum support required")
+minSupport=float(minSupport)
 f = open("E:/Chelsea/4thYear/2ndTerm/big data/project/ticdata2000.txt", "r")
 A=[]
 B=[]
@@ -68,50 +70,62 @@ SupportL=[]
 for item in A:
     if((len(SupportA)==0) or (item not in (x[0] for x in SupportA))):
         support=Support(item,A)
-        SupportA.append([item,support])
+        if(support>= minSupport):
+         SupportA.append([item,support])
 for item in B:
     if((len(SupportB)==0) or (item not in (x[0] for x in SupportB))):
         support=Support(item,B)
-        SupportB.append([item,support])
+        if(support>= minSupport):
+         SupportB.append([item,support])
 for item in C:
     if((len(SupportC)==0) or (item not in (x[0] for x in SupportC))):
         support=Support(item,C)
-        SupportC.append([item,support])
+        if(support>= minSupport):
+         SupportC.append([item,support])
 
 for item in D:
     if((len(SupportD)==0) or (item not in (x[0] for x in SupportD))):
         support=Support(item,D)
-        SupportD.append([item,support])
+        if(support>= minSupport):
+         SupportD.append([item,support])
 for item in E:
     if((len(SupportE)==0) or (item not in (x[0] for x in SupportE))):
         support=Support(item,E)
-        SupportE.append([item,support])
+        if(support>= minSupport):
+         SupportE.append([item,support])
 
 for item in F:
     if((len(SupportF)==0) or (item not in (x[0] for x in SupportF))):
         support=Support(item,F)
-        SupportF.append([item,support])
+        if(support>= minSupport):
+         SupportF.append([item,support])
 for item in G:
     if((len(SupportG)==0) or (item not in (x[0] for x in SupportG))):
         support=Support(item,G)
-        SupportG.append([item,support])
+        if(support>= minSupport):
+         SupportG.append([item,support])
 for item in H:
     if((len(SupportH)==0) or (item not in (x[0] for x in SupportH))):
         support=Support(item,H)
-        SupportH.append([item,support])
+        if(support>= minSupport):
+         SupportH.append([item,support])
 for item in I:
     if((len(SupportI)==0) or (item not in (x[0] for x in SupportI))):
         support=Support(item,I)
-        SupportI.append([item,support])
+        if(support>= minSupport):
+         SupportI.append([item,support])
 for item in J:
     if((len(SupportJ)==0) or (item not in (x[0] for x in SupportJ))):
         support=Support(item,J)
-        SupportJ.append([item,support])
+        if(support>= minSupport):
+         SupportJ.append([item,support])
 for item in K:
     if((len(SupportK)==0) or (item not in (x[0] for x in SupportK))):
         support=Support(item,K)
-        SupportK.append([item,support])
+        if(support>= minSupport):
+         SupportK.append([item,support])
 for item in L:
     if((len(SupportL)==0) or (item not in (x[0] for x in SupportL))):
         support=Support(item,L)
-        SupportL.append([item,support])
+        if(support>= minSupport):
+         SupportL.append([item,support])
