@@ -1,13 +1,22 @@
 def count(arry_x,mim):
     count_arry=[]
-    cou=0
+    refranc=[]
+    get_index=0
+    Support=0
     for x in arry_x :
-        if ((x,cou)in count_arry)==0:
+        
+        if  (x in refranc)==0:
             cou=arry_x.count(x)
             if cou >= mim:
                 Support=cou/len(arry_x)
-                E=(x,Support)
-                count_arry.append(E)
+                
+                refranc.append(x)
+                count_arry.append([x,Support,get_index])
+                
+        else :
+            index1=refranc.index(x)
+            count_arry[index1].append(get_index)
+        get_index = get_index+1;    
     return count_arry
 f = open("ticdata2000.txt", "r")
 A=[]
