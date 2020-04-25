@@ -45,6 +45,7 @@ def SupportTwoItemSet( SupportA , SupportB , total , minSupport):
   return supportArray
 
 
+
 f = open("ticdata2000.txt", "r")
 A=[]
 B=[]
