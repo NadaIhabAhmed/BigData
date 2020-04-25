@@ -1,0 +1,32 @@
+
+A=['A1','A3','A1','A3','A1','A3','A2']
+B=['B2','B4','B2','B4','B2','B5','B6']
+C=['C3','C5','C6','C5','C6','C1','C1']
+D=['D4','D3','D4','D3','D4','D5','D5']
+E=['E8','E1','E8','E1','E6','E6','E9']
+F=['F5','F8','F6','F5','F6','F8','F5']
+original = []
+# original.append(A,B,C,D,E,F,G,H,I,J,K,L)
+
+original.append(A)
+original.append(B)
+original.append(C)
+original.append(D)
+original.append(E)
+original.append(F)
+
+
+Total_count = len(A)
+min_count   = 2
+min_support = min_count / Total_count
+
+first_set  = get_first(original , min_count)
+final_list = first_set
+
+while True: 
+     temp =  get_Item (first_set , final_list , Total_count ,min_support)
+     if len(temp) != 0:
+        final_list = temp
+     else:
+       break
+
