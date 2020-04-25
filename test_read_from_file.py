@@ -11,13 +11,40 @@ def count(arry_x,mim):
                 Support=cou/len(arry_x)
                 
                 refranc.append(x)
-                count_arry.append([x,Support,get_index])
+                count_arry.append([[x], Support , [get_index] ] )
                 
         else :
             index1=refranc.index(x)
-            count_arry[index1].append(get_index)
+            count_arry[index1][2].append(get_index)
         get_index = get_index+1;    
     return count_arry
+
+
+def SupportTwoItemSet( SupportA , SupportB , total , minSupport):
+  index = []
+  supportArray = []
+  count = 0
+  for firstIndex in SupportA:
+      A = firstIndex[2]
+      for secondIndex in SupportB:
+          B = secondIndex[2]         
+          for row in A :
+              if row in B:
+                 count=count+1
+                 index.append(row)
+
+          support = count/total
+
+          if(support >= minSupport ):
+              firsttuple = firstIndex[0] + secondIndex[0] 
+              supportArray.append([ firsttuple , support , index ])
+
+          index = []
+          count = 0
+
+  return supportArray
+
+
 f = open("ticdata2000.txt", "r")
 A=[]
 B=[]
@@ -49,5 +76,4 @@ for x in f:
     L.append(int(data[16]))
 
 
-        
-  
+   
