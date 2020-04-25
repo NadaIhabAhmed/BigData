@@ -44,7 +44,37 @@ def SupportTwoItemSet( SupportA , SupportB , total , minSupport):
 
   return supportArray
 
+###################################################3
 
+
+def get_first(original , min_count):
+  first_set = []
+  for i in original :
+    first_set.append(count(i,min_count))
+  return first_set
+
+
+def get_Item (first_set , Any_list , Total_count ,min_support):
+  set_A = []
+  for i in Any_list:
+
+      for j in first_set:
+          ch = j[0][0][0][0]
+          count = 0
+
+          for char in i[0][0] :           
+            if char[0] < ch:
+              count = count + 1
+          
+          if count == len(i[0][0]):
+            ary = SupportItemSet(i ,j , Total_count  , min_support )
+            if len(ary) != 0 :
+              set_A.append(ary)
+
+  return set_A
+
+#####################################################
+#####################################################
 
 f = open("ticdata2000.txt", "r")
 A=[]
