@@ -19,6 +19,7 @@ def count(arry_x,mim):
         get_index = get_index+1;    
     return count_arry
 
+##########################################################################
 
 def SupportTwoItemSet( SupportA , SupportB , total , minSupport):
   index = []
@@ -73,6 +74,7 @@ def get_Item (first_set , Any_list , Total_count ,min_support):
 
   return set_A
 
+
 #####################################################
 #####################################################
 
@@ -93,18 +95,46 @@ L=[]
 for x in f:
     #m=x[6:28]
     data = x.split("\t")
-    A.append(int(data[5]))
-    B.append(int(data[6]))
-    C.append(int(data[7]))
-    D.append(int(data[8]))
-    E.append(int(data[9]))
-    F.append(int(data[10]))
-    G.append(int(data[11]))
-    H.append(int(data[12]))
-    I.append(int(data[13]))
-    J.append(int(data[14]))
-    K.append(int(data[15]))
-    L.append(int(data[16]))
+    A.append('A'+ data[5])
+    B.append('B'+ data[6])
+    C.append('C'+ data[7])
+    D.append('D'+ data[8])
+    E.append('E'+ data[9])
+    F.append('F'+ data[10])
+    G.append('G'+ data[11])
+    H.append('H'+ data[12])
+    I.append('I'+ data[13])
+    J.append('J'+ data[14])
+    K.append('K'+ data[15])
+    L.append('L'+ data[16])
 
 
-   
+original = []
+
+original.append(A)
+original.append(B)
+original.append(C)
+original.append(D)
+original.append(E)
+original.append(F)
+original.append(H)
+original.append(I)
+original.append(J)
+original.append(K)
+original.append(L)
+
+
+Total_count = len(A)
+min_count   = int(input("please input min count "))
+min_support = min_count / Total_count
+
+first_set  = get_first(original , min_count)
+final_list = first_set
+
+while True: 
+     temp =  get_Item (first_set , final_list , Total_count ,min_support)
+     if len(temp) != 0:
+        final_list = temp
+     else:
+       break
+
