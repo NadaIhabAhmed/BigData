@@ -77,12 +77,36 @@ def get_Item (first_set , Any_list , Total_count ,min_support):
 #####################################################
 #####################################################
 
-A=['A1','A3','A1','A3','A1','A3','A2']
-B=['B2','B4','B2','B4','B2','B5','B6']
-C=['C3','C5','C6','C5','C6','C1','C1']
-D=['D4','D3','D4','D3','D4','D5','D5']
-E=['E8','E1','E8','E1','E6','E6','E9']
-F=['F5','F8','F6','F5','F6','F8','F5']
+f = open("ticdata2000.txt", "r")
+A=[]
+B=[]
+C=[]
+D=[]
+E=[]
+F=[]
+G=[]
+H=[]
+I=[]
+J=[]
+K=[]
+L=[]
+
+for x in f:
+    #m=x[6:28]
+    data = x.split("\t")
+    A.append('A'+ data[5])
+    B.append('B'+ data[6])
+    C.append('C'+ data[7])
+    D.append('D'+ data[8])
+    E.append('E'+ data[9])
+    F.append('F'+ data[10])
+    G.append('G'+ data[11])
+    H.append('H'+ data[12])
+    I.append('I'+ data[13])
+    J.append('J'+ data[14])
+    K.append('K'+ data[15])
+    L.append('L'+ data[16])
+
 
 original = []
 
@@ -92,6 +116,12 @@ original.append(C)
 original.append(D)
 original.append(E)
 original.append(F)
+original.append(H)
+original.append(I)
+original.append(J)
+original.append(K)
+original.append(L)
+
 
 SupportAar = []
 lows       = []
