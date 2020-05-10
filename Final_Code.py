@@ -104,32 +104,62 @@ def sortlev(elem):
 def implies(X, Y):
     ru = ""
     for j in X:
+        j=lable(j)
         ru = ru + j + " , "
     ru = ru[:len(ru) - 3] + "  ------>  "
 
     for j in Y:
+        j=lable(j)
         ru = ru + j + " , "
     ru = ru[:len(ru) - 3]
     return ru
 
 #####################################################
-def lable():
-    lab = []
-    lab.append([" A " , " MGODRK Roman catholic see"])
-    lab.append([" B "  , " MGODPR Protestant "])
-    lab.append([" C "  , " MGODOV Other religion "])
-    lab.append([" D "  , " MGODGE No religion "])
-    lab.append([" E "  , " MRELGE Married"])
-    lab.append([" F "  , " MRELSA Living together"])
-    lab.append([" G "  , " MRELOV Other relation"])
-    lab.append([" H "  , " MFALLEEN Singles"])
-    lab.append([" I "  , " MFGEKIND Household without children"])
-    lab.append([" J "  , " MFWEKIND Household with children"])
-    lab.append([" K "  , " MOPLHOOG High level education"])
-    lab.append([" L "  , " MOPLMIDD Medium level education"])
-    print("Abbreviations :\n")
-    print(tabulate(lab, headers=['Abbreviation', 'Item'], tablefmt="fancy_grid"))
-
+def lable(j):
+    if j[0] == "A":
+        if j[1] == '0':
+            j = "MGODRK Roman catholic see " +j[1] + " (0%)"
+        elif j[1] == '1':
+            j = "MGODRK Roman catholic see " +j[1] + " (1 - 10%)"
+        elif j[1] == '2':
+            j = "MGODRK Roman catholic see " +j[1] + " (11 - 23%)"
+        elif j[1] == '3':
+            j = "MGODRK Roman catholic see " +j[1] + " (24 - 36%)"
+        elif j[1] == '4':
+            j = "MGODRK Roman catholic see " +j[1]+ " (37 - 49%)"
+        elif j[1] == '5':
+            j = "MGODRK Roman catholic see " +j[1]+ " (50 - 62%)"
+        elif j[1] == '6':
+            j = "MGODRK Roman catholic see " +j[1]+ " (63 - 75%)"
+        elif j[1] == '7':
+            j = "MGODRK Roman catholic see " +j[1] + " (76 - 88%)"
+        elif j[1] == '8':
+            j = "MGODRK Roman catholic see " +j[1] + " (89 - 99%)"
+        elif j[1] == '9':
+            j = "MGODRK Roman catholic see " +j[1] + " (100%)"
+    elif j[0] =="B":
+        j = "MGODPR Protestant "+j[1]
+    elif j[0] =="C":
+        j= "MGODOV Other religion "+j[1]
+    elif j[0] =="D":
+        j= "MGODGE No religion "+j[1]
+    elif j[0] =="E":
+        j= "MRELGE Married "+j[1]
+    elif j[0] =="F":
+        j= "MRELSA Living together "+j[1]
+    elif j[0] =="G":
+        j= "MRELOV Other relation "+j[1]
+    elif j[0] =="H":
+        j= "MFALLEEN Singles "+j[1]
+    elif j[0] =="I":
+        j= "MFGEKIND Household without children "+j[1]
+    elif j[0] =="J":
+        j= "MFWEKIND Household with children "+j[1]
+    elif j[0] =="K":
+        j= "MOPLHOOG High level education "+j[1]
+    elif j[0] =="L ":
+        j = "MOPLMIDD Medium level education "+j[1]
+    return j
 #####################################################
 
 def get_Rules(original):
@@ -185,7 +215,7 @@ def get_Rules(original):
         if len(lows) == 0:
             print("There are no Rules have Confidence more than or equal min Confidence")
         else:
-            lable()
+            #lable()
 
             lows.sort(key=sortlift)
             print("Rules sorted bY lift :\n")
